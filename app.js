@@ -6,16 +6,23 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var homeRoutes = require('./routes/home');
 
 var app = express();
+ 
+var favicon = require('serve-favicon'); 
 
-var engine = require('ejs-locals');
-var favicon = require('serve-favicon');
+// passport dependencies
+var session  = require('express-session');
+var passport = require('passport');
+var flash    = require('connect-flash');
 
-// view engine setup
+// passport setup
+
+// ejs view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.engine('ejs', engine);
+app.engine('ejs', require('ejs').__express);
 
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
@@ -24,8 +31,17 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// passport middlewares setup
+app.use(session({secret : 'iLoveAnn'}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
 app.use('/', routes);
 app.use('/users', users);
+
+// routes
+app.use('/home', homeRoutes); // home
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
