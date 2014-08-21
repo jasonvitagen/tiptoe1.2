@@ -17,6 +17,10 @@
     "ejs": "^1.0.0",
     "passport": "^0.2.0",
     "connect-flash": "^0.1.1",
-    "express-session": "^1.7.2"
+    "express-session": "^1.7.2",
+    "passport-local": "^1.0.0",
+    "passport-facebook": "^1.0.3",
+    "passport-google-oauth": "^0.1.5",
+    "mongoose": "^3.8.14"
   }
 }
