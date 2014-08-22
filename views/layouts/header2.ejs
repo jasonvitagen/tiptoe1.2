@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>LALA</title>
+	<style>
+		body { background: #282727; color: silver; font-family: 'Open Sans', sans-serif; font-size: 13px; }
+		a { color: silver; text-decoration: none; }
+		a:hover { text-decoration: underline; }
+		ul { list-style-type: none; }
+	</style>
+	<link rel="stylesheet" href="/stylesheets/gridism.css">
+	<link rel="stylesheet" href="/stylesheets/style2.css">
+</head>
+<body>
+	<div class="grid">
+		<div class="unit w-1-5">
+			<ul>
+				<li><a href="/auth/local-login">Sign in</a></li>
+				<li><a href="/auth/local-signup">Sign up</a></li>
+				<li><a href="/auth/facebook-login">Facebook Sign in</a></li>
+				<li><a href="/auth/google-login">Google Sign in</a></li>
+				<li><a href="/auth/profile">Profile</a></li>
+				<li><a href="/purchases/auto-create">Purchases - auto create</a></li>
+			</ul>
+		</div>
+		<% if (typeof message == 'object') { %>
+			<%= message %>
+		<% } %>
+		<div class="unit w-4-5">

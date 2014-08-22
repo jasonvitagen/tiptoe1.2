@@ -127,6 +127,7 @@ module.exports = function (passport) {
 		if (req.isAuthenticated()) {
 			return next();
 		}
+		req.flash('message', 'Please login first');
 		res.redirect('/');
 	}
 

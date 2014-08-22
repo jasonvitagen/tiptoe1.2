@@ -1,0 +1,23 @@
+<% include ../layouts/header2.ejs %>
+
+	<div id="auto-orders">
+			
+		<h3>Orders - auto create</h3>
+
+		<div class="grid">
+			<div class="w-1-1">
+				<input type="text" id="buyurlInput" value="<%= buyurl %>">
+				<button type="button" id="buyurlBtn">Load</button>
+			</div>
+		</div>
+		<div class="grid">
+			<div class="w-1-1">
+				<iframe id="buyurlIframe" src="<%= buyurl %>"></iframe>
+			</div>
+		</div>
+
+	</div>
+
+
+
+<% include ../layouts/footer2.ejs %>
